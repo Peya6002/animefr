@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<title>One piece VOSTFR episode 1</title>
+<html>
+    <head>
+        <link rel='stylesheet' href='css.css'>
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    </head>
+    <script>
+        var cnt=0,webpageArray = [
+          "https://www.pstream.net/e/AwNdlxGlbWMJQL5",
+          "http://msn.com/", 
+          "http://yahoo.com/"
+        ]; 
+  
+        function loadNextPage(dir) {   
+          cnt+=dir;
+          if (cnt<0) cnt=webpageArray.length-1; // wrap
+          else if (cnt>= webpageArray.length) cnt=0; // wrap
+          var iframe = document.getElementById("myframe"); 
+          iframe.src = webpageArray[cnt]; 
+          return false; // mandatory!
+        } 
+      </script>
+    <header>
+        <a href='index.html.html'>
+            <h1>One piece</h1>
+        </a>
+        <h2>One Piece VOSTFR - Episode 1 </h2>
+    </header>
+    <body>
+        <iframe id='myframe' src="https://www.pstream.net/e/AwNdlxGlbWMJQL5" width="900" height="700" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="1"></iframe>
+        
+          <h3>Synopsis</h3>
+          <p> Luffy part de son village pour se constituer un équipage et trouver le One Piece5,7,8. Pour échapper à la noyade, il s'enferme dans un tonneau et se fait repêcher par un jeune garçon du nom de Kobby. Ce dernier rêve de devenir un soldat de la Marine, mais par un coup du sort, s'est retrouvé enrôlé dans l'équipage de la terrible Lady Alvida. Ils rencontrent ensuite Roronoa Zoro, un terrible chasseur de primes qui est détenu par la Marine. Zoro accepte finalement de rejoindre l'équipage à condition que Luffy réussisse à trouver ses sabres qui sont détenus par le Colonel Morgan, le chef des marines de l'île. Après un combat contre Morgan, Luffy réussit à reprendre les trois épées et part avec Zoro en laissant Kobby réaliser son rêve. Roronoa Zoro devient ainsi le premier membre recruté pour son équipage....</p>
+
+          <button href='#' onClick="return loadNextPage(1)" type="button" class = 'center'>Episode 2 VOSTFR ➡</button>
+          <a href="#" onclick="return loadNextPage(1)"> Next Web Page >> </a> 
+          <h1> </h1>
+          <h1> </h1>
+          <h1> </h1>
+          <div id="bouton-paypal"></div>
+  <script>
+    paypal.Button.render({
+      env: 'sandbox', // Ou 'production',
+      commit: true, // Affiche le bouton  "Payer maintenant"
+      style: {
+        color: 'gold', // ou 'blue', 'silver', 'black'
+        size: 'small' // ou 'small', 'medium', 'large'
+        
+        // Autres options de style disponibles ici : https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/customize-button/
+      },
+      payment: function(data, actions) {
+        /* 
+         * Création du paiement
+         */
+        console.log('paiement créé');
+      },
+      onAuthorize: function(data, actions) {
+        /* 
+         * Exécution du paiement 
+         */
+      },
+      onCancel: function(data, actions) {
+        /* 
+         * L'acheteur a annulé le paiement
+         */
+      },
+      onError: function(err) {
+        /* 
+         * Une erreur est survenue durant le paiement 
+         */
+      }
+    }, '#bouton-paypal');
+  </script>
+    </body>
+</html>
+
+
